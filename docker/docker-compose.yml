@@ -1,0 +1,46 @@
+services:
+  escape-room-git:
+    build:
+      args:
+        BUILD_TIME: ${BUILD_TIME:-}
+        IMAGE: ${IMAGE:-ghcr.io/nirgeier/git-escaperoom}
+        IMAGE_TAG: ${IMAGE_TAG:-latest}
+        SourceRepository: ${SourceRepository:-}
+      context: ..
+      dockerfile: docker/Dockerfile
+      x-bake:
+        platforms:
+          - linux/amd64
+          - linux/arm64
+          - linux/arm/v6
+          - linux/arm/v7
+        tags:
+          - ghcr.io/nirgeier/git-escaperoom:latest
+          - ghcr.io/nirgeier/git-escaperoom:${IMAGE_TAG:-latest}
+          - nirgeier/git-escaperoom:latest
+          - nirgeier/git-escaperoom:${IMAGE_TAG:-latest}
+    container_name: git-escape-room
+    image: "ghcr.io/nirgeier/git-escaperoom:${IMAGE_TAG:-latest}"
+    labels:
+      - "com.example.app.Metadata.LastTagTime=${BUILD_TIME:-}"
+      - "com.example.app.Metadata.SourceRepository=${SourceRepository:-}"
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    volumes:
+      - ../Labs:/app/Labs
+      - ../mkdocs-site:/app/docs
+    stdin_open: true
+    tty: true
+    develop:
+      watch:
+        - action: rebuild
+          path: ../Labs
+        - action: rebuild
+          path: ./Dockerfile
+        - action: rebuild
+          path: ./server.js
+        - action: rebuild
+          path: ./entrypoint.sh
+        - action: rebuild
+          path: ./public

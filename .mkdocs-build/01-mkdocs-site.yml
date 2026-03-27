@@ -1,0 +1,12 @@
+###
+### mkdocs-site.yml
+###
+docs_dir: Labs
+edit_uri:
+repo_name: nirgeier/Git-EscapeRoom
+repo_url: https://github.com/nirgeier/Git-EscapeRoom
+site_author: Nir Geier - nirgeier@gmail.com
+site_description: A collection of Git-EscapeRoom Labs
+site_dir: ./mkdocs-site
+site_name: Git-EscapeRoom
+site_url: https://nirgeier.github.io/Git-EscapeRoom/

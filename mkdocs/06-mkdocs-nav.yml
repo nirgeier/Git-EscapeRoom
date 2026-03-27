@@ -1,0 +1,57 @@
+###
+### mkdocs-nav.yml
+###
+
+nav:
+  - README.md
+  - "Room 01 - Install & Verify Git": rooms/room_01/Room-01.md
+  - "Room 02 - Git Configuration": rooms/room_02/Room-02.md
+  - "Room 03 - Git Init": rooms/room_03/Room-03.md
+  - "Room 04 - The Three States of Git": rooms/room_04/Room-04.md
+  - "Room 05 - Git Add: Staging Deep Dive": rooms/room_05/Room-05.md
+  - "Room 06 - Git Status & Restore": rooms/room_06/Room-06.md
+  - "Room 07 - Git Commit: Saving Snapshots": rooms/room_07/Room-07.md
+  - "Room 08 - Git Log: Exploring History": rooms/room_08/Room-08.md
+  - "Room 09 - Git Diff: Comparing Changes": rooms/room_09/Room-09.md
+  - "Room 10 - Git Branch: Parallel Universes": rooms/room_10/Room-10.md
+  - "Room 11 - Git Merge: Bringing Branches Together": rooms/room_11/Room-11.md
+  - "Room 12 - Merge Conflicts": rooms/room_12/Room-12.md
+  - "Room 13 - Git Rebase: Linear History": rooms/room_13/Room-13.md
+  - "Room 14 - Git Stash: Emergency Shelf": rooms/room_14/Room-14.md
+  - "Room 15 - Git Remote: Connecting to the World": rooms/room_15/Room-15.md
+  - "Room 16 - Git Clone: Copying Repositories": rooms/room_16/Room-16.md
+  - "Room 17 - Git Fetch: Download Without Merging": rooms/room_17/Room-17.md
+  - "Room 18 - Git Pull: Fetch + Merge": rooms/room_18/Room-18.md
+  - "Room 19 - Git Push: Sharing Your Work": rooms/room_19/Room-19.md
+  - "Room 20 - Git Tag: Marking Milestones": rooms/room_20/Room-20.md
+  - "Room 21 - Git Cherry-Pick: Selective Commits": rooms/room_21/Room-21.md
+  - "Room 22 - Git Reset: Rewinding History": rooms/room_22/Room-22.md
+  - "Room 23 - Git Revert: Safe Undo": rooms/room_23/Room-23.md
+  - "Room 24 - Git Commit --Amend: Fixing Mistakes": rooms/room_24/Room-24.md
+  - "Room 25 - Git Blame: Line-by-Line Detective": rooms/room_25/Room-25.md
+  - "Room 26 - Git Bisect: Bug Hunting": rooms/room_26/Room-26.md
+  - "Room 27 - Git Reflog: Your Safety Net": rooms/room_27/Room-27.md
+  - "Room 28 - Git Alias: Custom Shortcuts": rooms/room_28/Room-28.md
+  - "Room 29 - Gitignore: Hiding Files from Git": rooms/room_29/Room-29.md
+  - "Room 30 - Gitattributes: File-Level Rules": rooms/room_30/Room-30.md
+  - "Room 31 - Git Hooks: Automation Triggers": rooms/room_31/Room-31.md
+  - "Room 32 - Git Submodule: Repos Within Repos": rooms/room_32/Room-32.md
+  - "Room 33 - Git Worktree: Parallel Branches": rooms/room_33/Room-33.md
+  - "Room 34 - Git Sparse-Checkout: Partial Repos": rooms/room_34/Room-34.md
+  - "Room 35 - Git Assume-Unchanged: Hiding Local Edits": rooms/room_35/Room-35.md
+  - "Room 36 - Git Clean: Remove Untracked Files": rooms/room_36/Room-36.md
+  - "Room 37 - Git Archive: Export Without .git": rooms/room_37/Room-37.md
+  - "Room 38 - Git Bundle: Offline Transfer": rooms/room_38/Room-38.md
+  - "Room 39 - Git Format-Patch & Am: Email Patches": rooms/room_39/Room-39.md
+  - "Room 40 - Git Grep: Search Tracked Files": rooms/room_40/Room-40.md
+  - "Room 41 - Git Shortlog: Contributor Stats": rooms/room_41/Room-41.md
+  - "Room 42 - Git Describe: Human-Readable Names": rooms/room_42/Room-42.md
+  - "Room 43 - Git Notes: Commit Metadata": rooms/room_43/Room-43.md
+  - "Room 44 - Git Replace: Transparent Object Swap": rooms/room_44/Room-44.md
+  - "Room 45 - Git Filter-Branch & Filter-Repo: History Rewrite": rooms/room_45/Room-45.md
+  - "Room 46 - Git Rerere: Reuse Recorded Resolution": rooms/room_46/Room-46.md
+  - "Room 47 - Git Fsck: Filesystem Check": rooms/room_47/Room-47.md
+  - "Room 48 - Git GC: Garbage Collection": rooms/room_48/Room-48.md
+  - "Room 49 - Git Plumbing Commands: Internals": rooms/room_49/Room-49.md
+  - "Room 50 - Git Object Model: The Four Objects": rooms/room_50/Room-50.md
+  - "Room 99 - The Final Exam: Prove Your Git Mastery": rooms/room_99/Room-99.md
