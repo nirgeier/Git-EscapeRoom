@@ -197,5 +197,13 @@ PROFILE
 
 chown escape:escape /home/escape/.bashrc /home/escape/.bash_profile
 
-# ── 6. Start web server ───────────────────────────────────────────────────────
+# Loop over the rooms and delete the md and the setup.sh files to prevent cheating
+for room in "$BASE"/room_*/; do
+    rm -f "$room"/Room-*.md "$room"/setup.sh
+done
+
+# ── 6. Signal that setup is complete ─────────────────────────────────────────
+touch /tmp/escape-room-ready
+
+# ── 7. Start web server ───────────────────────────────────────────────────────
 exec node /app/server.js
