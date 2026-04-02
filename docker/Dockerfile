@@ -1,12 +1,22 @@
+# ── Stage 1: build node-pty native addon ─────────────────────────────────────
+FROM node:20-alpine AS builder
+
+# hadolint ignore=DL3018
+RUN apk add --no-cache python3 make g++
+
+WORKDIR /app
+COPY docker/package.json ./
+RUN npm install --omit=dev
+
+# ── Stage 2: runtime image ────────────────────────────────────────────────────
 FROM node:20-alpine
 
-# Install system tools needed by rooms and node-pty
+ARG SourceRepository=https://github.com/nirgeier/Git-EscapeRoom
+
+# Install only runtime tools needed by the escape room
 # hadolint ignore=DL3018
 RUN apk add --no-cache \
   bash \
-  python3 \
-  make \
-  g++ \
   coreutils \
   curl \
   vim \
@@ -27,9 +37,9 @@ RUN apk add --no-cache \
 
 WORKDIR /app
 
-# ── Node.js app ───────────────────────────────────────────────────────────────
+# Copy pre-built node_modules from builder (no python/make/g++ in final image)
+COPY --from=builder /app/node_modules ./node_modules
 COPY docker/package.json ./
-RUN npm install --omit=dev
 
 COPY docker/server.js  ./
 COPY docker/public/    ./public/
@@ -53,6 +63,7 @@ COPY docker/entrypoint.sh ./entrypoint.sh
 RUN chmod +x ./entrypoint.sh
 
 LABEL org.opencontainers.image.description="Interactive Git Escape Room - learn Git by solving puzzles in a browser-based terminal"
+LABEL org.opencontainers.image.source="${SourceRepository}"
 
 EXPOSE 3000
 
